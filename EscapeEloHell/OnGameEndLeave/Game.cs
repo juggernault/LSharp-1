@@ -17,7 +17,10 @@ namespace OnGameEndLeave
                     () =>
                     {
                         Thread.Sleep(12000);
-                        Process.GetProcessById(Process.GetCurrentProcess().Id).Kill();
+                        // * You don't need to get Id and get process again by Id.
+                        //Process.GetProcessById(Process.GetCurrentProcess().Id).Kill();
+                        Process.GetCurrentProcess().Kill();
+                        // * Just GetCurrentProcess() and Kill it.
                     });
             }
         }
